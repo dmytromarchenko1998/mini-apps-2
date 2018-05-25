@@ -5,20 +5,20 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.post('/api/add', (req, res) => {
-  let purchase = new Purchase(req.body)
-  purchase.save((err, data) => {
+  const purchase = new Purchase(req.body);
+  purchase.save((err) => {
     if (err) {
-      res.send("already added")
+      res.send('already added');
     } else {
       res.sendStatus(202);
     }
-  })
-})
+  });
+});
 
-app.listen(8080, () => { console.log('listening on port 8080')})
+app.listen(8080, () => { console.log('listening on port 8080'); });
 

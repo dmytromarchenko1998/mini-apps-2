@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FormContainer from './components/formContainer.jsx';
 
-const App = (props) => { 
+const App = (props) => {
   const toggleForm = () => {
     document.getElementsByClassName('Form')[0].classList.toggle('hide');
-  }
+  };
   return (
     <div>
       <div>
@@ -16,5 +16,5 @@ const App = (props) => {
   );
 };
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 
