@@ -11,7 +11,7 @@ app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.post('/api/add', (req, res) => {
   let purchase = new Purchase(req.body)
-  restroom.save((err, data) => {
+  purchase.save((err, data) => {
     if (err) {
       res.send("already added")
     } else {
